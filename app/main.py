@@ -50,8 +50,8 @@ class Battleship:
         if location in self.field:
             ship = self.field[location]
             return ship.fire(*location)
-        else:
-            return "Miss!"
+
+        return "Miss!"
 
     def print_field(self) -> None:
         for row in range(10):

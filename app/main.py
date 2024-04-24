@@ -30,18 +30,14 @@ class Ship:
             if all(not deck.is_alive for deck in self.decks):
                 self.is_drowned = True
                 return "Sunk!"
-            else:
-                return "Hit!"
-        else:
-            return "Miss!"
+            return "Hit!"
+        return "Miss!"
 
 
 class Battleship:
     def __init__(self, ships: list) -> None:
         self.field = {}
-        self.ships = ships
-        for ship in ships:
-            start, end = ship
+        for start, end in ships:
             new_ship = Ship(start, end)
             for deck in new_ship.decks:
                 self.field[(deck.row, deck.col)] = new_ship

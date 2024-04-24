@@ -46,7 +46,6 @@ class Battleship:
         if location in self.field:
             ship = self.field[location]
             return ship.fire(*location)
-
         return "Miss!"
 
     def print_field(self) -> None:
